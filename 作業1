@@ -1,0 +1,24 @@
+import random
+listnumber = list(range(1,101))
+listx=[]
+for i in range(6):    
+    n = random.randint(0,len(listnumber)-1)
+    num = listnumber.pop(n)
+    listx.append(num)
+    print("開獎號碼:",num)
+print(listx)
+
+number2 = list() 
+count = 0
+while True:
+    number = input("請輸入號碼,q離開:")
+    count += 1
+    if number.upper() == "Q": 
+        break
+    if count == 6:
+        break
+    if number2.count(number) ==0: 
+        number2.append(number)           
+    else:
+        print("號碼重複")
+print("號碼有:",number2)
